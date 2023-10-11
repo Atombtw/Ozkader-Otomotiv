@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8593002C-1BDE-4665-81F5-9AD50009B26B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Özkader_Otomotiv</RootNamespace>
+    <AssemblyName>Özkader-Otomotiv</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44331</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\FooterController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Iletisim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Kategori.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Urun.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="ÖZKADER OTOMOTİV\img\bg.jpeg" />
+    <Content Include="Content\img\boş_resim.png" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\about.html" />
+    <Content Include="ÖZKADER OTOMOTİV\contact.html" />
+    <Content Include="ÖZKADER OTOMOTİV\google-map.html" />
+    <Content Include="ÖZKADER OTOMOTİV\iletisim-form.html" />
+    <Content Include="ÖZKADER OTOMOTİV\img\0.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\1.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\2.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\3.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\4.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\5.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\6.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\7.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\8.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\9.jpg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\logo.png" />
+    <Content Include="ÖZKADER OTOMOTİV\img\onlineform.png" />
+    <Content Include="ÖZKADER OTOMOTİV\img\onlinekatalog.png" />
+    <Content Include="ÖZKADER OTOMOTİV\img\work-1.jpeg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\work-2.jpeg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\work-3.jpeg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\work-4.jpeg" />
+    <Content Include="ÖZKADER OTOMOTİV\img\work-5.jpeg" />
+    <Content Include="ÖZKADER OTOMOTİV\index.html" />
+    <Content Include="ÖZKADER OTOMOTİV\js\jquery.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\js\owl.carousel.js" />
+    <Content Include="ÖZKADER OTOMOTİV\js\type-writer.js" />
+    <Content Include="ÖZKADER OTOMOTİV\kvk-aydınlatma.html" />
+    <Content Include="ÖZKADER OTOMOTİV\kvk-bilgilendirme.html" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\.gitignore" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\css\lightbox.css" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\css\lightbox.min.css" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\images\close.png" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\images\loading.gif" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\images\next.png" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\images\prev.png" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\js\lightbox-plus-jquery.js" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\js\lightbox-plus-jquery.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\js\lightbox.js" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\js\lightbox.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\examples\index.html" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\Gruntfile.js" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\src\css\lightbox.css" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\src\images\close.png" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\src\images\loading.gif" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\src\images\next.png" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\src\images\prev.png" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\src\js\lightbox.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\.gitattributes" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\.gitignore" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\assets\ajax-loader.gif" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\assets\owl.carousel.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\assets\owl.carousel.min.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\assets\owl.theme.default.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\assets\owl.theme.default.min.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\assets\owl.theme.green.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\assets\owl.theme.green.min.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\assets\owl.video.play.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\owl.carousel.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\owl.carousel.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\css\animate.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\css\docs.theme.min.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\bird_blue_32.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\download.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\feature-drag.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\feature-modern.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\feature-module.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\feature-options.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\feature-responsive.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\feature-zombie.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\owl-logo.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\img\twitter_25.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\js\app.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\js\foundation.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\owl.carousel.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\owl.carousel.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\vendors\foundation.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\vendors\highlight.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\vendors\jquery.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\vendors\jquery.mousewheel.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\animate.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\autoheight.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\autoplay.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\autowidth.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\basic.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\center.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\demos.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\events.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\lazyLoad.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\merge.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\mousewheel.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\responsive.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\rtl.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\stagepadding.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\test.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\urlhashnav.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\demos\video.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\api-classes.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\api-events.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\api-options.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\dev-buildin-plugins.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\dev-external.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\dev-plugin-api.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\dev-styles.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\started-faq.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\started-installation.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\started-welcome.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\support-changelog.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\support-contact.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\docs\support-contributing.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\index.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\css\animate.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\bird_blue_32.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\download.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\feature-drag.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\feature-modern.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\feature-module.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\feature-options.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\feature-responsive.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\feature-zombie.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\owl-logo.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\img\twitter_25.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\js\app.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\js\foundation.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\scss\highlight.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\vendors\foundation.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\vendors\highlight.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\vendors\jquery.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\vendors\jquery.mousewheel.min.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\helpers\modulo.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\helpers\test.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\Gruntfile.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\img\ajax-loader.gif" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\img\owl.video.play.png" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.animate.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.autoheight.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.autoplay.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.autorefresh.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.carousel.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.hash.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.lazyload.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.navigation.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.support.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.support.modernizr.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\owl.video.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\owl.carousel.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\owl.theme.default.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\owl.theme.green.css" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\test\index.html" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\test\unit\autoplay.js" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\test\unit\core.js" />
+    <Content Include="ÖZKADER OTOMOTİV\projects.html" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\main.css" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\.editorconfig" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\.jscsrc" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\.jshintrc" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\bower.json" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\DEPLOY.md" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\js\lightbox-plus-jquery.min.map" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\dist\js\lightbox.min.map" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\LICENSE" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\package.json" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\README.md" />
+    <Content Include="ÖZKADER OTOMOTİV\lightbox2-2.11.3\ROADMAP.md" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\.travis.yml" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\bower.json" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\CONTRIBUTING.md" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\LICENSE" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\dist\README.md" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\owlcarousel\README.md" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs\assets\vendors\jquery.min.map" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\scss\custom.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\scss\demos.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\scss\docs.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\scss\docs.theme.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\scss\highlight.css.map" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\scss\highlight.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\scss\_settings.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\assets\vendors\jquery.min.map" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\data\classes.json" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\data\events.json" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\data\features.json" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\data\options.json" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\layouts\demos.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\layouts\docs.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\layouts\home.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\animate.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\autoheight.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\autoplay.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\autowidth.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\basic.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\center.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\demos.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\events.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\lazyLoad.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\merge.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\mousewheel.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\responsive.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\rtl.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\stagepadding.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\test.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\urlhashnav.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\video.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\api-classes.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\api-events.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\api-options.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\dev-buildin-plugins.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\dev-external.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\dev-plugin-api.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\dev-styles.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\started-faq.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\started-installation.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\started-welcome.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\support-changelog.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\support-contact.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\support-contributing.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\pages\index.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\footer.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\head.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\header.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\home-carousel.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\home-features.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\home-hero.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\home-teaser-text.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\javascripts.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\releated-docs.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\sidenav-docs.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\title.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\docs_src\templates\partials\vendors.hbs" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\ISSUE_TEMPLATE.md" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\LICENSE" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\package-lock.json" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\package.json" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\README.md" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\ROADMAP.md" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\.jscsrc" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\js\.jshintrc" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\owl.carousel.css.map" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\owl.carousel.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\owl.theme.default.css.map" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\owl.theme.default.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\owl.theme.green.css.map" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\owl.theme.green.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\_animate.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\_autoheight.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\_core.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\_lazyload.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\_theme.default.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\_theme.green.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\_theme.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\src\scss\_video.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\OwlCarousel2-2.3.4\_config.json" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\main.css.map" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\main.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\admin.css" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_about.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_base.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_contact.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_footer.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_header.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_home.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_mobile.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_projects.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_utilities.scss" />
+    <Content Include="ÖZKADER OTOMOTİV\scss\_variables.scss" />
+    <Content Include="Views\Footer\Footer.cshtml" />
+    <Content Include="Views\Default\Hakkımızda.cshtml" />
+    <Content Include="Views\Default\Anamenu.cshtml" />
+    <Content Include="Views\Default\kvkaydınlatma.cshtml" />
+    <Content Include="Views\Default\kvkbilgilendirme.cshtml" />
+    <Content Include="Views\Default\Iletisim_form.cshtml" />
+    <Content Include="Views\Default\Iletisim_bilgi.cshtml" />
+    <Content Include="Views\Default\Google_map.cshtml" />
+    <Content Include="Views\Admin\GirisYap.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Ekle.cshtml" />
+    <Content Include="Views\Default\Urunler.cshtml" />
+    <Content Include="Views\Default\Katalog.cshtml" />
+    <Content Include="Views\Admin\Urunler.cshtml" />
+    <Content Include="Views\Admin\Ekle2.cshtml" />
+    <Content Include="Views\Admin\Iletisim.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57101</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44331/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

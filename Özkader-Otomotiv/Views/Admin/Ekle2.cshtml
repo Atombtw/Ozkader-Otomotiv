@@ -1,0 +1,81 @@
+﻿@model Özkader_Otomotiv.Models.Tbl_Urun
+
+@{
+    ViewBag.Title = "Ekle2";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Ekle2", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
+    <div>
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control" name="UrunAd" />
+    </div>
+    <div>
+        <label>Ürün Kategorisi</label>
+        @Html.DropDownListFor(x => x.Tbl_Kategori.KategoriID,(List<SelectListItem>)ViewBag.drop, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Volt</label>
+        <input type="text" class="form-control" name="UrunVolt" />
+    </div>
+    <div>
+        <label>Fotoğraf</label>
+        <input type="file" class="form-control" name="UrunFotograf" />
+    </div>
+    <div>
+        <label>Yedek Parça 1</label>
+        <input type="text" class="form-control" name="UrunYedekParca1" />
+    </div>
+    <div>
+        <label>Yedek Parça 2</label>
+        <input type="text" class="form-control" name="UrunYedekParca2" />
+    </div>
+    <div>
+        <label>Yedek Parça 3</label>
+        <input type="text" class="form-control" name="UrunYedekParca3" />
+    </div>
+    <div>
+        <label>Yedek Parça 4</label>
+        <input type="text" class="form-control" name="UrunYedekParca4" />
+    </div>
+    <div>
+        <label>Yedek Parça 5</label>
+        <input type="text" class="form-control" name="UrunYedekParca5" />
+    </div>
+    <div>
+        <label>Yedek Parça 6</label>
+        <input type="text" class="form-control" name="UrunYedekParca6" />
+    </div>
+    <div>
+        <label>Kullanılan Araçlar 1</label>
+        <input type="text" class="form-control" name="UrunKullanilanAraclar1" />
+    </div>
+    <div>
+        <label>Kullanılan Araçlar 2</label>
+        <input type="text" class="form-control" name="UrunKullanilanAraclar2" />
+    </div>
+    <div>
+        <label>Kullanılan Araçlar 3</label>
+        <input type="text" class="form-control" name="UrunKullanilanAraclar3" />
+    </div>
+    <div>
+        <label>Kullanılan Araçlar 4</label>
+        <input type="text" class="form-control" name="UrunKullanilanAraclar4" />
+    </div>
+    <div>
+        <label>Kullanılan Araçlar 5</label>
+        <input type="text" class="form-control" name="UrunKullanilanAraclar5" />
+    </div>
+    <div>
+        <label>Oem No 1</label>
+        <input type="text" class="form-control" name="UrunOemNo1" />
+    </div>
+    <div>
+        <label>Oem No 2</label>
+        <input type="text" class="form-control" name="UrunOemNo2" />
+    </div>
+    <div style="margin-top: 10px; margin-bottom: 10px;">
+        <button class="btn btn-primary">Ürün Ekle</button>
+    </div>
+}

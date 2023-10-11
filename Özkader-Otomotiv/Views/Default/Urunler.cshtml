@@ -1,0 +1,175 @@
+﻿@using Özkader_Otomotiv.Models
+@model List<Tbl_Urun>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet"
+          href="OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/ÖZKADER OTOMOTİV/scss/main.css" />
+    <title>Urunler</title>
+</head>
+<body>
+    <header id="header__inner">
+        <div class="container">
+            <nav class="main-nav">
+                <img src="~/ÖZKADER OTOMOTİV/img/logo.png" alt="" class="main-nav__logo" />
+                <ul class="main-nav__items">
+                    <li><a href="/Default/Anamenu">Ana Sayfa</a></li>
+                    <li><a href="/Default/Hakkımızda">Kurumsal</a></li>
+                    <li><a href="/Default/Katalog" class="active">Katalog</a></li>
+                    <li><a href="/Default/Iletisim_form">İletişim</a></li>
+                    <button class="navbar-toggler" style="display: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span style="color: #ffff" class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars"></i></span>
+                    </button>
+                </ul>
+                @*toogle*@
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Default/Anamenu">Ana Sayfa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Default/Hakkımızda">Kurumsal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Default/Katalog">Katalog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Default/Iletisim_form">İletişim</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                @*toogle end*@
+            </nav>
+        </div>
+    </header>
+
+    <section id="projects" class="text-center py-2">
+        <div class="container">
+            <h2 class="section-title">@Session["id"]</h2>
+            <div class="border-bottom"></div>
+            <p class="lead"></p>
+            <div class="itemss">
+                @foreach (var item in Model)
+                {
+                    if (item.UrunFotograf == null)
+                    {
+                        <div class="urundis">
+                            <div class="urunfotograf">
+                                <img class="urunimg" src="~/Content/img/boş_resim.png">
+                            </div>
+                            <div class="urunbilgiler">
+                                <div class="urunbilgilersol">
+                                    <div class="urunbaslik" style="background-color: #DDE6ED">
+                                        <h3 style="font-weight: bold;">@item.UrunAd</h3>
+                                    </div>
+                                    <div class="urunyedekparca">
+                                        <h5 style="font-weight: bold; background-color: #DDE6ED">YEDEK PARÇALAR</h5>
+                                        <p>@item.UrunYedekParca1</p>
+                                        <p>@item.UrunYedekParca2</p>
+                                        <p>@item.UrunYedekParca3</p>
+                                        <p>@item.UrunYedekParca4</p>
+                                        <p>@item.UrunYedekParca5</p>
+                                        <p>@item.UrunYedekParca6</p>
+                                    </div>
+                                </div>
+                                <div class="urunbilgilersağ">
+                                    <div class="urunvolt" style="background-color: #DDE6ED">
+                                        <h3 style="font-weight: bold;">@item.UrunVolt</h3>
+                                    </div>
+                                    <div class="urunkullandigiaraclar">
+                                        <h5 style="font-weight: bold;">KULLANILDIĞI ARAÇLAR</h5>
+                                        <p>@item.UrunKullanilanAraclar1</p>
+                                        <p>@item.UrunKullanilanAraclar2</p>
+                                        <p>@item.UrunKullanilanAraclar3</p>
+                                        <p>@item.UrunKullanilanAraclar4</p>
+                                        <p>@item.UrunKullanilanAraclar5</p>
+                                    </div>
+                                    <div class="urunoemno">
+                                        <h5 style="font-weight: bold;">OEM NO</h5>
+                                        <p>@item.UrunOemNo1</p>
+                                        <p>@item.UrunOemNo2</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="urundis">
+                            <div class="urunfotograf">
+                                <img class="urunimg" src="@item.UrunFotograf">
+                            </div>
+                            <div class="urunbilgiler">
+                                <div class="urunbilgilersol">
+                                    <div class="urunbaslik" style="background-color: #DDE6ED">
+                                        <h3 style="font-weight: bold;">@item.UrunAd</h3>
+                                    </div>
+                                    <div class="urunyedekparca">
+                                        <h5 style="font-weight: bold; background-color: #DDE6ED">YEDEK PARÇALAR</h5>
+                                        <p>@item.UrunYedekParca1</p>
+                                        <p>@item.UrunYedekParca2</p>
+                                        <p>@item.UrunYedekParca3</p>
+                                        <p>@item.UrunYedekParca4</p>
+                                        <p>@item.UrunYedekParca5</p>
+                                        <p>@item.UrunYedekParca6</p>
+                                    </div>
+                                </div>
+                                <div class="urunbilgilersağ">
+                                    <div class="urunvolt" style="background-color: #DDE6ED">
+                                        <h3 style="font-weight: bold;">@item.UrunVolt</h3>
+                                    </div>
+                                    <div class="urunkullandigiaraclar">
+                                        <h5 style="font-weight: bold;">KULLANILDIĞI ARAÇLAR</h5>
+                                        <p>@item.UrunKullanilanAraclar1</p>
+                                        <p>@item.UrunKullanilanAraclar2</p>
+                                        <p>@item.UrunKullanilanAraclar3</p>
+                                        <p>@item.UrunKullanilanAraclar4</p>
+                                        <p>@item.UrunKullanilanAraclar5</p>
+                                    </div>
+                                    <div class="urunoemno">
+                                        <h5 style="font-weight: bold;">OEM NO</h5>
+                                        <p>@item.UrunOemNo1</p>
+                                        <p>@item.UrunOemNo2</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+
+    @Html.Action("Footer", "Footer")
+</body>
+</html>

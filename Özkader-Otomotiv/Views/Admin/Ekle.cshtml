@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Ekle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <label>Kategori Adı</label>
+        <input type="text" class="form-control" name="KategoriAd" />
+    </div>
+    <div>
+        <label>Fotoğraf</label>
+        <input type="file" class="form-control" name="KategoriFoto" />
+    </div>
+    <div style="margin-top: 10px;">
+        <button class="btn btn-primary">Kategori Ekle</button>
+    </div>
+}

@@ -1,0 +1,38 @@
+﻿﻿@using Özkader_Otomotiv.Models
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Tbl_Iletisim>
+
+@{
+    ViewBag.Title = "Iletisim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="width:100%;">
+    <tr>
+        <th>#</th>
+        <th>Adı Soyadı</th>
+        <th>Telefon</th>
+        <th>Firma</th>
+        <th>E-Posta</th>
+        <th>Adres</th>
+        <th>Mesaj</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IletisimID</td>
+            <td>@item.IletisimAd</td>
+            <td>@item.IletisimTelefon</td>
+            <td>@item.IletisimFirma</td>
+            <td>@item.IletisimEposta</td>
+            <td>@item.IletisimAdres</td>
+            <td>@item.IletisimMesaj</td>
+            <td>
+                <a href="/Admin/Sil3/@item.IletisimID" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Iletisim", new { sayfa }))

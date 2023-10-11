@@ -1,0 +1,7 @@
+﻿ul li {
+    padding: 10px;
+}
+
+ul li:hover {
+    cursor:pointer;
+}

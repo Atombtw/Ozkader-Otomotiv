@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OzkaderDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminKullanici" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdminSifre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Iletisim">
+          <Key>
+            <PropertyRef Name="IletisimID" />
+          </Key>
+          <Property Name="IletisimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IletisimAd" Type="nvarchar" MaxLength="300" />
+          <Property Name="IletisimTelefon" Type="nvarchar" MaxLength="300" />
+          <Property Name="IletisimFirma" Type="nvarchar" MaxLength="300" />
+          <Property Name="IletisimEposta" Type="nvarchar" MaxLength="300" />
+          <Property Name="IletisimAdres" Type="nvarchar" MaxLength="300" />
+          <Property Name="IletisimMesaj" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_Kategori">
+          <Key>
+            <PropertyRef Name="KategoriID" />
+          </Key>
+          <Property Name="KategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KategoriAd" Type="nvarchar" MaxLength="350" />
+          <Property Name="KategoriFoto" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="Tbl_Urun">
+          <Key>
+            <PropertyRef Name="UrunID" />
+          </Key>
+          <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UrunKategori" Type="int" />
+          <Property Name="UrunAd" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunVolt" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunYedekParca1" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunYedekParca2" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunYedekParca3" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunYedekParca4" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunYedekParca5" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunYedekParca6" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunKullanilanAraclar1" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunKullanilanAraclar2" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunKullanilanAraclar3" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunKullanilanAraclar4" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunKullanilanAraclar5" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunOemNo1" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunOemNo2" Type="nvarchar" MaxLength="350" />
+          <Property Name="UrunFotograf" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <Association Name="FK_Tbl_Urun_Tbl_Kategori">
+          <End Role="Tbl_Kategori" Type="Self.Tbl_Kategori" Multiplicity="0..1" />
+          <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Kategori">
+              <PropertyRef Name="KategoriID" />
+            </Principal>
+            <Dependent Role="Tbl_Urun">
+              <PropertyRef Name="UrunKategori" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OzkaderDBModelStoreContainer">
+          <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Iletisim" EntityType="Self.Tbl_Iletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Kategori" EntityType="Self.Tbl_Kategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Urun" EntityType="Self.Tbl_Urun" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Urun_Tbl_Kategori" Association="Self.FK_Tbl_Urun_Tbl_Kategori">
+            <End Role="Tbl_Kategori" EntitySet="Tbl_Kategori" />
+            <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OzkaderDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Admin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminKullanici" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdminSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Kategori">
+          <Key>
+            <PropertyRef Name="KategoriID" />
+          </Key>
+          <Property Name="KategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KategoriAd" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="KategoriFoto" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tbl_Urun" Relationship="Self.FK_Tbl_Urun_Tbl_Kategori" FromRole="Tbl_Kategori" ToRole="Tbl_Urun" />
+        </EntityType>
+        <EntityType Name="Tbl_Urun">
+          <Key>
+            <PropertyRef Name="UrunID" />
+          </Key>
+          <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunKategori" Type="Int32" />
+          <Property Name="UrunAd" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunVolt" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunYedekParca1" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunYedekParca2" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunYedekParca3" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunYedekParca4" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunYedekParca5" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunYedekParca6" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunKullanilanAraclar1" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunKullanilanAraclar2" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunKullanilanAraclar3" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunKullanilanAraclar4" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunKullanilanAraclar5" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunOemNo1" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunOemNo2" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="UrunFotograf" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tbl_Kategori" Relationship="Self.FK_Tbl_Urun_Tbl_Kategori" FromRole="Tbl_Urun" ToRole="Tbl_Kategori" />
+        </EntityType>
+        <Association Name="FK_Tbl_Urun_Tbl_Kategori">
+          <End Role="Tbl_Kategori" Type="Self.Tbl_Kategori" Multiplicity="0..1" />
+          <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Kategori">
+              <PropertyRef Name="KategoriID" />
+            </Principal>
+            <Dependent Role="Tbl_Urun">
+              <PropertyRef Name="UrunKategori" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OzkaderDBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" />
+          <EntitySet Name="Tbl_Kategori" EntityType="Self.Tbl_Kategori" />
+          <EntitySet Name="Tbl_Urun" EntityType="Self.Tbl_Urun" />
+          <AssociationSet Name="FK_Tbl_Urun_Tbl_Kategori" Association="Self.FK_Tbl_Urun_Tbl_Kategori">
+            <End Role="Tbl_Kategori" EntitySet="Tbl_Kategori" />
+            <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
+          </AssociationSet>
+          <EntitySet Name="Tbl_Iletisim" EntityType="OzkaderDBModel.Tbl_Iletisim" />
+        </EntityContainer>
+        <EntityType Name="Tbl_Iletisim">
+          <Key>
+            <PropertyRef Name="IletisimID" />
+          </Key>
+          <Property Name="IletisimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IletisimAd" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IletisimTelefon" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IletisimFirma" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IletisimEposta" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IletisimAdres" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IletisimMesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OzkaderDBModelStoreContainer" CdmEntityContainer="OzkaderDBEntities2">
+          <EntitySetMapping Name="Tbl_Admin">
+            <EntityTypeMapping TypeName="OzkaderDBModel.Tbl_Admin">
+              <MappingFragment StoreEntitySet="Tbl_Admin">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="AdminKullanici" ColumnName="AdminKullanici" />
+                <ScalarProperty Name="AdminSifre" ColumnName="AdminSifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Kategori">
+            <EntityTypeMapping TypeName="OzkaderDBModel.Tbl_Kategori">
+              <MappingFragment StoreEntitySet="Tbl_Kategori">
+                <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
+                <ScalarProperty Name="KategoriAd" ColumnName="KategoriAd" />
+                <ScalarProperty Name="KategoriFoto" ColumnName="KategoriFoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Urun">
+            <EntityTypeMapping TypeName="OzkaderDBModel.Tbl_Urun">
+              <MappingFragment StoreEntitySet="Tbl_Urun">
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="UrunKategori" ColumnName="UrunKategori" />
+                <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+                <ScalarProperty Name="UrunVolt" ColumnName="UrunVolt" />
+                <ScalarProperty Name="UrunYedekParca1" ColumnName="UrunYedekParca1" />
+                <ScalarProperty Name="UrunYedekParca2" ColumnName="UrunYedekParca2" />
+                <ScalarProperty Name="UrunYedekParca3" ColumnName="UrunYedekParca3" />
+                <ScalarProperty Name="UrunYedekParca4" ColumnName="UrunYedekParca4" />
+                <ScalarProperty Name="UrunYedekParca5" ColumnName="UrunYedekParca5" />
+                <ScalarProperty Name="UrunYedekParca6" ColumnName="UrunYedekParca6" />
+                <ScalarProperty Name="UrunKullanilanAraclar1" ColumnName="UrunKullanilanAraclar1" />
+                <ScalarProperty Name="UrunKullanilanAraclar2" ColumnName="UrunKullanilanAraclar2" />
+                <ScalarProperty Name="UrunKullanilanAraclar3" ColumnName="UrunKullanilanAraclar3" />
+                <ScalarProperty Name="UrunKullanilanAraclar4" ColumnName="UrunKullanilanAraclar4" />
+                <ScalarProperty Name="UrunKullanilanAraclar5" ColumnName="UrunKullanilanAraclar5" />
+                <ScalarProperty Name="UrunOemNo1" ColumnName="UrunOemNo1" />
+                <ScalarProperty Name="UrunOemNo2" ColumnName="UrunOemNo2" />
+                <ScalarProperty Name="UrunFotograf" ColumnName="UrunFotograf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Iletisim">
+            <EntityTypeMapping TypeName="OzkaderDBModel.Tbl_Iletisim">
+              <MappingFragment StoreEntitySet="Tbl_Iletisim">
+                <ScalarProperty Name="IletisimMesaj" ColumnName="IletisimMesaj" />
+                <ScalarProperty Name="IletisimAdres" ColumnName="IletisimAdres" />
+                <ScalarProperty Name="IletisimEposta" ColumnName="IletisimEposta" />
+                <ScalarProperty Name="IletisimFirma" ColumnName="IletisimFirma" />
+                <ScalarProperty Name="IletisimTelefon" ColumnName="IletisimTelefon" />
+                <ScalarProperty Name="IletisimAd" ColumnName="IletisimAd" />
+                <ScalarProperty Name="IletisimID" ColumnName="IletisimID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

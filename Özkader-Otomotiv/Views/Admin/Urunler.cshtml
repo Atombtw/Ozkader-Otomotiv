@@ -1,0 +1,44 @@
+﻿﻿@using Özkader_Otomotiv.Models
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Tbl_Urun>
+
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="width:100%;">
+    <tr>
+        <th>#</th>
+        <th>Urun Adı</th>
+        <th>Fotoğraf</th>
+        <th>Kategori</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.UrunID</td>
+            <td>@item.UrunAd</td>
+            @if (item.UrunFotograf == null)
+            {
+                <td>Yok</td>
+            }
+            @if (item.UrunFotograf != null)
+            {
+                <td>Var</td>
+            }
+            <td>@item.Tbl_Kategori.KategoriAd</td>
+            <td>
+                <a href="/Admin/Sil2/@item.UrunID" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Urunler", new { sayfa }))
+<div style="display:flex; justify-content:space-between;">
+    <div></div>
+    <div><a href="/Admin/Ekle2/" class="btn btn-primary">Urun Ekle</a></div>
+</div>

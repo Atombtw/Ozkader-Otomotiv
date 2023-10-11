@@ -1,0 +1,42 @@
+﻿﻿@using Özkader_Otomotiv.Models
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Tbl_Kategori>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="width:100%;">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>Fotoğraf</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.KategoriID</td>
+            <td>@item.KategoriAd</td>
+            @if (item.KategoriFoto == null)
+            {
+                <td>Yok</td>
+            }
+            @if (item.KategoriFoto != null)
+            {
+                <td>Var</td>
+            }
+            <td>
+                <a href="/Admin/Sil/@item.KategoriID" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+<div style="display:flex; justify-content:space-between;">
+    <div></div>
+    <div><a href="/Admin/Ekle/" class="btn btn-primary">Kategori Ekle</a></div>
+</div>
